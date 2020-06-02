@@ -1,0 +1,92 @@
+﻿@page
+@model www.goff.us.Pages.AboutModel
+@{
+}
+
+
+   <div class="col-12" style="text-align:center">
+        <br /><br />
+        <span class="h3 text-info">About Goff.us</span>
+        <br /><br />
+    </div>
+<br /><br />
+<div>
+  <p style="text-indent: 30px">
+    Christmas 2017 Santa brought our son a hamster, Humphrey.  Humphrey ran, alot and shortly there after I cobbled together a magnet, hall effect sensor, attached them to his wheel and began learning Python.  Every night a Raspberry Pi running a small Python script would log the number of laps that he ran and then upload them.  In the end we logged the last 1.5 years of Humphrey's running.
+  </p>
+  <p>
+    Humphrey has since passed on however, his logs are still visable here -> <a href="/humphrey">Humphrey's Laps</a>
+  </p>
+  <p>
+    Little did I know where this project would lead me.
+  </p>
+    <p>
+    The first version of Goff.us was written in Python/HTML/CSS with Django as the framework hosted on AWS.
+    The second was written in JavaScript/HTML/CSS, Express/React was the framework and was also hosted on AWS.
+    Currently this site is writen in C#/JavaScript/HTML/CSS and the framework is DotNet Core 3.1 and is hosted on Azure.
+  </p>
+  <p>
+    The backend of Goff.us is a REST api that is used to generate the page data within this site.  Data is pushed to Goff.us via temperature probes located throughout our house as well as data from other online sources.
+  </p>
+  <p>
+    In addition to the website there is also a led matrix display in my office that also consumes this data:
+  </p>
+</div>
+<br /><br />
+<div class="col-12" style="text-align:left">
+  <div class="row">
+
+    <div class="col-md-4" style="display:inline-block">
+      <form method="post">
+        <div class="from-group" style="text-align:left">
+          <label for="emailFrom" class="control-label">Contact Us:</label>
+          <input for="emailFrom" name="emailFrom" class="form-control" placeholder="name">
+        </div>
+        @* <br /> *@
+        <div class="from-group" style="text-align:left">
+          <label for="emailSubject" class="control-label"></label>
+          <input for="emailSubject" name="emailSubject" class="form-control" placeholder="email address">
+        </div>
+        @* <br /> *@
+
+        <div class="from-group" style="text-align:left">
+          <label for="emailBody" class="control-label"></label>
+          <textarea for="emailBody" name="emailBody" class="form-control" rows="6" placeholder="send us a message"></textarea>
+        </div>
+          <br />
+        <div class="form-group" style="text-align:left">
+          @Html.AntiForgeryToken()
+          <input type="submit" value="Send Email" class="btn btn-primary">
+        </div>
+      </form>
+
+    </div>
+    <div class="col-md-3" style="display:inline-block">
+    </div>
+    <div class="col-md-4" style="display:inline-block">
+      <img src="../images/wallboard.jpg" alt=""  style="width:300px;height:400px;margin-left:auto;margin-righ:auto;">
+    </div>
+  </div>
+
+</div>
+
+
+@* <div class="form-group">
+<form method="post" name="emailForm" id="emailForm">
+  <div>
+    <label for="emailFrom"></label>
+    <input name="emailFrom" id="emailFrom" value="emailFrom"/>
+  </div>
+  <div>
+    <label for="emailSubject"></label>
+    <input name="emailSubject" id="emailSubject" value="emailSubject"/>
+  </div>
+  <div>
+    <label for="emailBody"></label>
+    <textarea name="emailBody" id="emailBody" form id="emailForm" rows="3" columns="25">Hello</textarea>
+  </div>
+  <div>
+    <input type="submit" value="emailData">
+  </div>
+</form>
+</div> *@

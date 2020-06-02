@@ -1,0 +1,64 @@
+﻿@page
+@model www.goff.us.Pages.HumphreyModel
+@{
+}
+
+
+
+   <div class="col-12" style="text-align:center">
+        <br />
+        <span class="h3 text-info">Humphrey's Lap Data</span>
+        <br /><br />
+    </div>
+<div>
+  <table class="table table-borderless table-sm" style="text-align:center">
+    <thead class="thead-light"></thead>
+          <thead>
+            <tr>
+              <th>Total Laps</th>
+              <th>Total Miles</th>
+              <th>Total Kilometers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                @Model.totalLaps.ToString("N0")
+              </th>
+              <th>
+                @Model.totalMiles
+              </th>
+              <th>
+                @Model.totalKilometers
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+    </div>
+
+    <div class="col-12 border p-3">
+        <table id="Humphrey_Data" class="display compact table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Time Stamp</th>
+                    <th>Laps</th>
+                    <th>Miles</th>
+                    <th>Kilometers</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+
+
+        <br />
+        <div class="chart" id="curve_chart" style="height: 500px"></div>
+        <br /><br />
+
+
+@section Scripts{
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/js/humphrey.js"></script>
+}

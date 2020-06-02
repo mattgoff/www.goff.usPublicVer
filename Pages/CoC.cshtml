@@ -1,0 +1,163 @@
+﻿@page
+@model www.goff.us.Pages.CoCModel
+@{
+}
+<div class="container">
+
+
+   <div class="col-12" style="text-align:center">
+        <br /><br />
+        <span class="h3 text-info">Clash of Clans Player Data for: @Model.activePlayer</span>
+        <br /><br />
+    </div>
+
+
+<div class="form-group">
+<form method="post">
+  <select class="custom-select-sm" id="playerPicker" name="searchPlayer" onchange="this.form.submit();">
+    <option selected disabled> -- Select Player --</option>
+        @foreach (var player in Model.CoCPlayerNames)
+        {
+            <option value="@player.name">@player.name</option>
+        }
+  </select>
+  <noscript><input type="submit" value="Submit"> </noscript>
+</form>
+</div>
+
+
+  <table class="table table-striped table-hover table-borderless table-sm">
+    <thead class="thead-light"></thead>
+    <tr>
+      <th class="text-left">Player</td>
+      <th class="text-left">Role</td>
+      <th class="text-left">TH level</td>
+      <th class="text-left">Exp</td>
+      <th class="text-left">Trophies</td>
+      <th class="text-left">Role</td>
+      <th class="text-left">Max Trophies</td>
+      <th class="text-left">Attack Wins</td>
+      <th class="text-left">Defense Wins</td>
+      <th class="text-left">Donations</td>
+      <th class="text-left">Last Update</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var player in Model.coCPlayers)
+    {
+        <tr>
+                <td class="text-left">@player.name</td>
+                <td class="text-left">@player.role</td>
+                <td class="text-left">@player.townHallLevel</td>
+                <td class="text-left">@player.expLevel</td>
+                <td class="text-left">@player.trophies</td>
+                <td class="text-left">@player.role</td>
+                <td class="text-left">@player.bestTrophies</td>
+                <td class="text-left">@player.attackWins</td>
+                <td class="text-left">@player.defenseWins</td>
+                <td class="text-left">@player.donations</td>
+                <td class="text-left">@player.COCRecordStamp</td>
+        </tr>
+    }
+    </tbody>
+  </table>
+<br />
+      <table class="table table-striped table-hover table-borderless table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th class="text-left">Hero</td>
+                <th class="text-left">Level</td>
+                <th class="text-left">Max Level</td>
+                <th class="text-left">Village</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hero in Model.heroes)
+            {
+            <tr>
+                <td class="text-left">@hero.name</td>
+                <td class="text-left">@hero.level</td>
+                <td class="text-left">@hero.maxLevel</td>
+                <td class="text-left">@hero.village</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+<br />
+        <table class="table table-striped table-hover table-borderless table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th class="text-left">Troop</td>
+                <th class="text-left">Level</td>
+                <th class="text-left">Max Level</td>
+                <th class="text-left">Village</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var troop in Model.troops)
+            {
+              <tr>
+                  <td class="text-left">@troop.name</td>
+                  <td class="text-left">@troop.level</td>
+                  <td class="text-left">@troop.maxLevel</td>
+                  <td class="text-left">@troop.village</td>
+              </tr>
+            }
+        </tbody>
+    </table>
+<br />
+    <table class="table table-striped table-hover table-borderless table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th class="text-left">Spell</td>
+                <th class="text-left">Level</td>
+                <th class="text-left">Max Level</td>
+                <th class="text-left">Village</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var spell in Model.spells)
+            {
+              <tr>
+                  <td class="text-left">@spell.name</td>
+                  <td class="text-left">@spell.level</td>
+                  <td class="text-left">@spell.maxLevel</td>
+                  <td class="text-left">@spell.village</td>
+              </tr>
+
+            }
+        </tbody>
+    </table>
+<br />
+        <table class="table table-striped table-hover table-borderless table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th class="text-left">Name</td>
+                <th class="text-left">Info</td>
+                <th class="text-left">Stars</td>
+                <th class="text-left">Target</td>
+                <th class="text-left">Value</td>
+                <th class="text-left">Village</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var achieve in Model.achievements)
+            {
+              <tr>
+                  <td class="text-left">@achieve.name</td>
+                  <td class="text-left">@achieve.info</td>
+                  <td class="text-left">@achieve.stars</td>
+                  <td class="text-left">@achieve.target</td>
+                  <td class="text-left">@achieve.value</td>
+                  <td class="text-left">@achieve.village</td>
+              </tr>
+
+            }
+        </tbody>
+    </table>
+
+    </div>
+    <br /><br />

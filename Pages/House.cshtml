@@ -1,0 +1,62 @@
+@page
+@model HouseModel
+@* @{
+    ViewData["Title"] = "Home Temps";
+}
+<h1>@ViewData["Title"]</h1> *@
+
+   <div class="col-12" style="text-align:center">
+        <br />
+        <span class="h3 text-info">Office Data</span>
+        <br /><br />
+    </div>
+    <div class="col-12 border p-3">
+        <table id="Office_Data" class="display compact table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Temperature F</th>
+                    <th>Hummidity</th>
+                    <th>TimeStamp</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+   <div class="col-12" style="text-align:center">
+        <br /><br />
+        <span class="h3 text-info">Front Entry Data</span>
+        <br /><br />
+    </div>
+        <div class="col-12 border p-3">
+        <table id="Front_Data" class="display compact table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Temperature F</th>
+                    <th>TimeStamp</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+   <div class="col-12" style="text-align:center">
+        <br /><br />
+        <span class="h3 text-info">Patio Data</span>
+        <br /><br />
+    </div>
+        <div class="col-12 border p-3">
+        <table id="Patio_Data" class="display compact table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Temperature F</th>
+                    <th>TimeStamp</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+@section Scripts{
+    <script src="/js/officeTemperature.js"></script>
+}

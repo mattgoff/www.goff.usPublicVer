@@ -1,0 +1,143 @@
+﻿@page
+@model www.goff.us.Pages.WeatherDataModel
+@{
+}
+
+   <div class="col-12" style="text-align:center">
+        <br /><br />
+        <span class="h3 text-info">Weather Data for 85383</span>
+        <br /><br />
+    </div>
+
+<div class="container">
+
+<h2>Peoria AZ Weather</h2>
+<table class="table table-striped table-hover table-borderless table-sm">
+    <thead>
+        <tr>
+            <th class="text-left">Temperature</td>
+            <th class="text-left">Humidity</td>
+            <th class="text-left">Feels Like</td>
+            <th class="text-left">Wind</td>
+            <th class="text-left">Gusts</td>
+            <th class="text-left">UV Rating</td>
+            <th class="text-left">Timestamp</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-left">@Model.weatherDataCurrent[8]</td>
+            <td class="text-left">@Model.weatherDataCurrent[4]</td>
+            <td class="text-left">@Model.weatherDataCurrent[5]</td>
+            <td class="text-left">@Model.weatherDataCurrent[7]</td>
+            <td class="text-left">@Model.weatherDataCurrent[9]</td>
+            <td class="text-left">@Model.weatherDataCurrent[6]</td>
+            <td class="text-left">@Model.weatherTimeStamp</td>
+
+        </tr>
+    </tbody>
+</table>
+    <br><br>
+    <h2>Forecast</h2>
+    <table class="table table-striped table-hover table-borderless table-sm">
+        <thead>
+            <tr>
+                <th class="text-left">Day</td>
+                <th class="text-left">High</td>
+                <th class="text-left">Low</td>
+                <th class="text-left">Humidity</td>
+                <th class="text-left">Wind</td>
+                <th class="text-left">Gusts</td>
+                <th class="text-left"></td>
+            </tr>
+        </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">@Model.weatherDataDay0[1]</td>
+                        <td class="text-left">@Model.weatherDataDay0[0]</td>
+                        <td class="text-left">@Model.weatherDataDay0[9]</td>
+                        <td class="text-left">@Model.weatherDataDay0[5]</td>
+                        <td class="text-left">@Model.weatherDataDay0[2]</td>
+                        <td class="text-left">@Model.weatherDataDay0[4]</td>
+                        <td class="text-left"><img src="@Model.weatherDataDay0[7]"/></td>
+                    </tr>
+                     <tr>
+                        <td class="text-left">@Model.weatherDataDay1[1]</td>
+                        <td class="text-left">@Model.weatherDataDay1[0]</td>
+                        <td class="text-left">@Model.weatherDataDay1[9]</td>
+                        <td class="text-left">@Model.weatherDataDay1[5]</td>
+                        <td class="text-left">@Model.weatherDataDay1[2]</td>
+                        <td class="text-left">@Model.weatherDataDay1[4]</td>
+                        <td class="text-left"><img src="@Model.weatherDataDay0[7]"/></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">@Model.weatherDataDay2[1]</td>
+                        <td class="text-left">@Model.weatherDataDay2[0]</td>
+                        <td class="text-left">@Model.weatherDataDay2[9]</td>
+                        <td class="text-left">@Model.weatherDataDay2[5]</td>
+                        <td class="text-left">@Model.weatherDataDay2[2]</td>
+                        <td class="text-left">@Model.weatherDataDay2[4]</td>
+                        <td class="text-left"><img src="@Model.weatherDataDay0[7]"/></td>
+                    </tr>
+                     <tr>
+                        <td class="text-left">@Model.weatherDataDay3[1]</td>
+                        <td class="text-left">@Model.weatherDataDay3[0]</td>
+                        <td class="text-left">@Model.weatherDataDay3[9]</td>
+                        <td class="text-left">@Model.weatherDataDay3[5]</td>
+                        <td class="text-left">@Model.weatherDataDay3[2]</td>
+                        <td class="text-left">@Model.weatherDataDay3[4]</td>
+                        <td class="text-left"><img src="@Model.weatherDataDay0[7]"/></td>
+                    </tr>
+                </tbody>
+</table>
+
+
+</table>
+<br><br>
+<h2>Details</h2>
+<table class="table table-striped table-hover table-borderless table-sm">
+            <tbody>
+                <tr>
+                    <td class="text-left">@Model.weatherDataDay0[3]</td>
+                    <td class="text-left">Day</td>
+                    <td class="text-left">@Model.weatherDataDay0[6]</td>
+                </tr>
+                <tr>
+                    <td class="text-left"></td>
+                    <td class="text-left">Night</td>
+                    <td class="text-left">@Model.weatherDataDay0[11]</td>
+                </tr>
+                                <tr>
+                    <td class="text-left">@Model.weatherDataDay1[3]</td>
+                    <td class="text-left">Day</td>
+                    <td class="text-left">@Model.weatherDataDay1[6]</td>
+                </tr>
+                <tr>
+                    <td class="text-left"></td>
+                    <td class="text-left">Night</td>
+                    <td class="text-left">@Model.weatherDataDay1[11]</td>
+                </tr>
+                                <tr>
+                    <td class="text-left">@Model.weatherDataDay2[3]</td>
+                    <td class="text-left">Day</td>
+                    <td class="text-left">@Model.weatherDataDay2[6]</td>
+                </tr>
+                <tr>
+                    <td class="text-left"></td>
+                    <td class="text-left">Night</td>
+                    <td class="text-left">@Model.weatherDataDay2[11]</td>
+                </tr>
+                                <tr>
+                    <td class="text-left">@Model.weatherDataDay3[3]</td>
+                    <td class="text-left">Day</td>
+                    <td class="text-left">@Model.weatherDataDay3[6]</td>
+                </tr>
+                <tr>
+                    <td class="text-left"></td>
+                    <td class="text-left">Night</td>
+                    <td class="text-left">@Model.weatherDataDay3[11]</td>
+                </tr>
+            </tbody>
+</table>
+
+</div>

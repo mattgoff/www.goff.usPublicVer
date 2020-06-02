@@ -1,0 +1,63 @@
+﻿@page
+@model www.goff.us.Pages.AllergyModel
+@{
+}
+
+   <div class="col-12" style="text-align:center">
+        <br /><br />
+        <span class="h3 text-info">Allergy Data for 85383</span>
+        <br /><br />
+    </div>
+
+<table class="table table-striped table-hover table-borderless table-sm">
+      <tr>
+        <td class="text-left">
+          Pollen Count Yesterday
+        </td>
+       <td class="text-left">
+         @Html.DisplayFor(m => m.AllergyDatas.PollenYesterday)
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-left">
+          Pollen Count Today
+        </td>
+        <td class="text-left">
+          @Model.AllergyDatas.PollenToday.Split(" ")[0]
+        </td>
+        <td class="text-left">
+          @Model.AllergyDatas.PollenToday.Split(" ")[1]
+        </td>
+          <td class="text-left">
+          @Model.AllergyDatas.PollenToday.Split(" ")[2]
+        </td>
+        <td class="text-left">
+          @Model.AllergyDatas.PollenToday.Split(" ")[3]
+        </td>
+      </tr>
+      <tr>
+        <td class="text-left">
+          Pollen Count Tomorrow
+        </td>
+        <td class="text-left">
+          @Html.DisplayFor(m => m.AllergyDatas.PollenTomorrow)
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-left">
+          Pollen Count Record Stamp
+        </td>
+        <td class="text-left">
+          @Html.DisplayFor(m => m.AllergyDatas.AllergyRecordStamp)
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+</table>
